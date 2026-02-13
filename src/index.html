@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen Quest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #0c0c0c;
+        color: #f0f0f0;
+        font-family: 'VT323', monospace;
+        overflow-x: hidden;
+      }
+      .font-pixel {
+        font-family: 'Press Start 2P', cursive;
+      }
+      .pixel-border {
+        border: 4px solid #fff;
+        box-shadow: 4px 4px 0px #333, 8px 8px 0px #111;
+      }
+      .pixel-border-gold {
+        border: 4px solid #ffd700;
+        box-shadow: 4px 4px 0px #b8860b;
+      }
+      .pixel-border-red {
+        border: 4px solid #ff4d4d;
+        box-shadow: 4px 4px 0px #8b0000;
+      }
+      .pixel-button {
+        transition: transform 0.1s;
+      }
+      .pixel-button:active {
+        transform: translate(2px, 2px);
+      }
+      
+      /* Campfire Animation */
+      @keyframes flicker {
+        0%, 100% { transform: scale(1) translateY(0); opacity: 0.8; }
+        50% { transform: scale(1.1) translateY(-5px); opacity: 1; }
+      }
+      .fire-particle {
+        animation: flicker 0.2s infinite alternate;
+      }
+      
+      .scanline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(to right, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-size: 100% 4px, 3px 100%;
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #444;
+        border: 2px solid #1a1a1a;
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3",
+    "path": "https://esm.sh/path@^0.12.7"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="scanline"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
