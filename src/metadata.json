@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Kitchen Quest: Culinary Dungeon Master",
+  "description": "An indie RPG-style cooking game that uses AI to scan your fridge, reduce food waste, and level up your cooking skills while saving you gold.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation",
+    "microphone"
+  ]
+}
