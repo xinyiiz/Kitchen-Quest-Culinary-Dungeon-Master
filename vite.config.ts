@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    // 🔥 IMPORTANT for GitHub Pages
+    // Required for GitHub Pages
     base: '/Kitchen-Quest-Culinary-Dungeon-Master/',
 
     server: {
@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
-      }
-    }
+      },
+    },
   };
 });
